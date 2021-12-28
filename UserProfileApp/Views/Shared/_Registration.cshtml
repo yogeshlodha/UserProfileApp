@@ -1,0 +1,42 @@
+﻿@model UserProfileApp.Models.RegistrationModel
+@{
+    ViewBag.Title = "Registration Page";
+}
+
+@using (Html.BeginForm("Index", "Registration", FormMethod.Post))
+{
+<table>
+    <tr>
+        <td colspan="2"> User Registration   </td>
+    </tr>
+    <tr>
+        <td> User Name   </td>
+        <td>  &nbsp;  </td>
+        <td> @Html.TextBoxFor(m => m.UserName)   </td>
+    </tr>
+    <tr>
+        <td> City   </td>
+        <td>  &nbsp;  </td>
+        <td> @Html.TextBoxFor(m => m.City)   </td>
+
+    </tr>
+    <tr>
+        <td> Email Id   </td>
+        <td>  &nbsp;  </td>
+        <td> @Html.TextBoxFor(m => m.EmailId, new { type="Email"})   </td>
+
+    </tr>
+    <tr>
+        <td> Date of Birth   </td>
+        <td>  &nbsp;  </td>
+        <td> @Html.TextBoxFor(m => m.DOB,new  {type="Date" })   </td>
+
+    </tr>
+
+    <tr>
+        <td> <input type="button" name="Reset" value="Reset" />   </td>
+        <td>  &nbsp;  </td>
+        <td> <input type="submit" name="Register" value="Register" />   </td>
+    </tr>
+</table>
+}

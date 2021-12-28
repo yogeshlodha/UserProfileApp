@@ -1,0 +1,28 @@
+﻿@model UserProfileApp.Models.LoginModel
+@{
+    ViewBag.Title = "Login Page";
+}
+@using (Html.BeginForm("Index", "Login", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td colspan="2" > User Login   </td>
+        </tr>
+        <tr>
+            <td> Email Id   </td>
+            <td>  &nbsp;  </td>
+            <td> @Html.TextBoxFor(m => m.emailId)   </td>
+        </tr>
+        <tr>
+            <td> Password   </td>
+            <td>  &nbsp;  </td>
+            <td> @Html.TextBoxFor(m => m.password)   </td>
+
+        </tr>
+        <tr>
+            <td> <input type="button" name="Reset" value="Reset" />   </td>
+            <td>  &nbsp;  </td>
+            <td> <input type="submit" name="Login" value="Login" />   </td>
+        </tr>
+    </table>
+}

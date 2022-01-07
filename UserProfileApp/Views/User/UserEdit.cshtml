@@ -1,17 +1,35 @@
-﻿@{
-    Layout = null;
+﻿@using UserProfileApp.Models.DB;
+@model UserProfile
+
+<h1>
+    Hi, @Html.DisplayFor(m => m.UserName)
+</h1>
+@using (Html.BeginForm("UserEdit", "User", FormMethod.Post))
+{
+
+<table>
+    <tr>
+        <td>Name  </td>
+        <td>&nbsp;&nbsp;  @Html.TextBoxFor(m => m.UserName) </td>
+    </tr>
+
+    <tr>
+        <td> Email </td>
+        <td> &nbsp;&nbsp; @Html.TextBoxFor(m => m.EmailId, new { type = "email" }) </td>
+    </tr>
+    <tr>
+        <td>City  </td>
+        <td> &nbsp;&nbsp; @Html.TextBoxFor(m => m.City) </td>
+    </tr>
+    <tr>
+        <td>Date Of Birth </td>
+        <td>&nbsp;&nbsp;  @Html.TextBoxFor(m => m.DOB, new { type = "date" }) </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" name="btnSave" id="btnSave" value="Save" />
+        </td>
+    </tr>
+</table>
+
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
-    </div>
-</body>
-</html>

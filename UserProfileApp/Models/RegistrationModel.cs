@@ -7,6 +7,7 @@ namespace UserProfileApp.Models
 {
     public class RegistrationModel
     {
+        public  int UserId { get; set; }
         public  string EmailId { get; set; }
         public  string UserName { get; set; }
         public  string City { get; set; }

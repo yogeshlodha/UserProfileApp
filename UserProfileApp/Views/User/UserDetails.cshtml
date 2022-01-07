@@ -1,17 +1,32 @@
-﻿@{
-    Layout = null;
-}
+﻿@using UserProfileApp.Models.DB;
+@model UserProfile
 
-<!DOCTYPE html>
+<h1>
+    Hi, @Html.DisplayFor(m => m.UserName)
+</h1>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
-    </div>
-</body>
-</html>
+    <table>
+        <tr>
+            <td>Name  </td>
+            <td>&nbsp;&nbsp;  @Html.DisplayFor(m => m.UserName) </td>
+        </tr>
+
+        <tr>
+            <td> Email </td>
+            <td> &nbsp;&nbsp; @Html.DisplayFor(m => m.EmailId) </td>
+        </tr>
+        <tr>
+            <td>City  </td>
+            <td> &nbsp;&nbsp; @Html.DisplayFor(m => m.City) </td>
+        </tr>
+        <tr>
+            <td>Date Of Birth </td>
+            <td>&nbsp;&nbsp;  @Html.DisplayFor(m => m.DOB) </td>
+        </tr>
+        <tr>
+            <td>
+            @Html.ActionLink("Go Back","UserList","User")
+            </td>
+        </tr>
+    </table>
+

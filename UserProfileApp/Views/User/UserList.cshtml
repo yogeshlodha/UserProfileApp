@@ -1,17 +1,27 @@
-﻿@{
-    Layout = null;
-}
+﻿@using UserProfileApp.Models;
+@model List<RegistrationModel>
 
-<!DOCTYPE html>
+<table>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
-    </div>
-</body>
-</html>
+    <thead>
+        <tr>
+            <th>Email       </th>
+            <th>User Name       </th>
+            <th>City       </th>
+            <th>DOB       </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td style="padding: 5px 5px 5px 5px"> @item.EmailId </td>
+    <td style="padding: 5px 5px 5px 5px"> @item.UserName </td>
+    <td style="padding: 5px 5px 5px 5px"> @item.City </td>
+    <td style="padding: 5px 5px 5px 5px"> @item.DOB </td>
+    <td style="padding: 5px 5px 5px 5px"> <a href="@Url.Action("UserEdit","User",new { Id = item.UserId})">Edit</a> </td>
+    <td style="padding: 5px 5px 5px 5px"> <a href="@Url.Action("UserDetails","User",new { Id = item.UserId})">User Details</a> </td>
+
+</tr>
+    }
+</table>
+

@@ -1,0 +1,48 @@
+﻿
+@using UserProfileApp.Models.DB;
+@model Friend
+
+@{
+    ViewBag.Title = "Friend Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add a Friend Record</h2>
+
+@using (Html.BeginForm("FriendAdd", "Friend", FormMethod.Post))
+{
+<table>
+    <tr>
+        <td>Friend Id  </td>
+        <td>
+            &nbsp;&nbsp;
+            @Html.TextBoxFor(m => m.FriendId)
+            @Html.ValidationMessageFor(m => m.FriendId)
+        </td>
+    </tr>
+
+    <tr>
+        <td>Name  </td>
+        <td>&nbsp;&nbsp;  
+        @Html.TextBoxFor(m => m.FriendName ) 
+        @Html.ValidationMessageFor(m=>m.FriendName)
+        </td>
+    </tr>
+
+    <tr>
+        <td>Place  </td>
+        <td>
+            &nbsp;&nbsp;
+            @Html.TextBoxFor(m => m.Place)
+            @Html.ValidationMessageFor(m => m.Place)
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <input type="submit" name="btnSave" id="btnSave" value="Save" />
+        </td>
+    </tr>
+</table>
+
+}

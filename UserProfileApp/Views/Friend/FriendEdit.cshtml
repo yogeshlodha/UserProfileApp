@@ -1,0 +1,38 @@
+﻿
+@using UserProfileApp.Models.DB;
+@model Friend
+
+@{
+    ViewBag.Title = "FriendEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>FriendEdit</h2>
+
+@using (Html.BeginForm("FriendEdit", "Friend", FormMethod.Post))
+{
+    @Html.HiddenFor(m=>m.Id)
+<table>
+    <tr>
+        <td>Friend Id  </td>
+        <td>&nbsp;&nbsp;  @Html.TextBoxFor(m => m.FriendId) </td>
+    </tr>
+
+    <tr>
+        <td>Name  </td>
+        <td>&nbsp;&nbsp;  @Html.TextBoxFor(m => m.FriendName , new { required = "true" }) </td>
+    </tr>
+
+    <tr>
+        <td>Place  </td>
+        <td> &nbsp;&nbsp; @Html.TextBoxFor(m => m.Place, new  { maxlength = "25" }) </td>
+    </tr>
+
+    <tr>
+        <td>
+            <input type="submit" name="btnSave" id="btnSave" value="Save" />
+        </td>
+    </tr>
+</table>
+
+}

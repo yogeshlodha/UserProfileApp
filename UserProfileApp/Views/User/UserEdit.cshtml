@@ -6,7 +6,7 @@
 </h1>
 @using (Html.BeginForm("UserEdit", "User", FormMethod.Post))
 {
-
+<input type="hidden" name="UserId" id="UserId" value="@Model.Id" />
 <table>
     <tr>
         <td>Name  </td>
@@ -23,7 +23,8 @@
     </tr>
     <tr>
         <td>Date Of Birth </td>
-        <td>&nbsp;&nbsp;  @Html.TextBoxFor(m => m.DOB, new { type = "date" }) </td>
+        <td>&nbsp;&nbsp; 
+            <input type="date" name="name" value="@Model.DOB.Value.ToString("mm/dd/yyyy")" /> </td>
     </tr>
     <tr>
         <td>

@@ -19,7 +19,7 @@ namespace UserProfileApp.Service
             return userModel;
         }
 
-        public bool ReSaveUser(RegistrationModel users)
+        public void ReSaveUser(RegistrationModel users)
         {
             UserProfile userModel;
             var DB = new UserDBEntities();
@@ -29,7 +29,8 @@ namespace UserProfileApp.Service
                 userModel.EmailId = users.EmailId;
                 userModel.UserName = users.UserName;
             
-            return  DB.SaveChanges();
+             DB.SaveChanges();
+             
         }
 
         public List<RegistrationModel> GetUsersList()

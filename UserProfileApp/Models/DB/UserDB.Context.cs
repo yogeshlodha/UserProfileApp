@@ -25,8 +25,10 @@ namespace UserProfileApp.Models.DB
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Friend> Friends { get; set; }
+        public virtual DbSet<tblFriend> tblFriends { get; set; }
+        public virtual DbSet<UserLogin> UserLogins { get; set; }
         public virtual DbSet<UserProfile> UserProfiles { get; set; }
         public virtual DbSet<UserRole> UserRoles { get; set; }
-        public virtual DbSet<UserLogin> UserLogins { get; set; }
     }
 }

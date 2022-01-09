@@ -1,0 +1,32 @@
+﻿@using UserProfileApp.Models;
+@model List<FriendModel>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Friend Id       </th>
+            <th>Name       </th>
+            <th>Place       </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="padding: 5px 5px 5px 5px"> @item.FriendId </td>
+            <td style="padding: 5px 5px 5px 5px"> @item.FriendName </td>
+            <td style="padding: 5px 5px 5px 5px"> @item.Place </td>
+            <td style="padding: 5px 5px 5px 5px"> 
+            <a href="@Url.Action("FriendEdit","Friend",new { Id = item.Id})">Edit</a> 
+            <br/><a href="@Url.Action("DeleteRecords","Friend",new { Id = item.Id})">Delete</a> </td>
+
+        </tr>
+    }
+    <tr>
+        <td colspan="3">
+            <a href="@Url.Action("FriendAdd","Friend")">Add New Record</a>
+
+        </td>
+    </tr>
+</table>
+

@@ -43,9 +43,9 @@ namespace UserProfileApp.Controllers
         {
             UserService userSer = new UserService();
 
-            var userModel = userSer.GetUserById(Id);
+             userSer.ReSaveUser(model);
 
-            return View(userModel);
+            return RedirectToAction("UserList");
         }
 
         // GET: User

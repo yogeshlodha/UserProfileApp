@@ -10,12 +10,21 @@ namespace UserProfileApp.Controllers
 {
     public class LoginController : Controller
     {
-        // GET: Login
+        /// <summary>
+        ///     Get user login view.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             return View("_Login");
         }
 
+        /// <summary>
+        ///     Validate user crediential.
+        /// </summary>
+        /// <param name="emailId">Email Id</param>
+        /// <param name="password">Password</param>
+        /// <returns>Redirect to view as per condition.</returns>
         [HttpPost]
         public ActionResult Index(string emailId, string password   )
         {

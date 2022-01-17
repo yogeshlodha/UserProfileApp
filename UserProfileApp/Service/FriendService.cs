@@ -9,6 +9,10 @@ namespace UserProfileApp.Service
 {
     public class FriendService
     {
+        /// <summary>
+        ///     Add to friend 
+        /// </summary>
+        /// <param name="Friends">Friend model</param>
         public void AddFriend(FriendModel Friends)
         {
             Friend FriendModel = new Friend();
@@ -22,6 +26,11 @@ namespace UserProfileApp.Service
             DB.SaveChanges();
         }
 
+        /// <summary>
+        ///     Get friend by friendId
+        /// </summary>
+        /// <param name="FriendId">Friend Id</param>
+        /// <returns></returns>
         public Friend GetFriendById(int FriendId)
         {
             Friend FriendModel;
@@ -32,6 +41,10 @@ namespace UserProfileApp.Service
             return FriendModel;
         }
 
+        /// <summary>
+        ///     Resave friend record.
+        /// </summary>
+        /// <param name="Friends">friend model</param>
         public void ReSaveFriend(FriendModel Friends)
         {
             Friend FriendModel;
@@ -43,6 +56,10 @@ namespace UserProfileApp.Service
             DB.SaveChanges();
         }
 
+        /// <summary>
+        ///     Get friends list
+        /// </summary>
+        /// <returns>friend model</returns>
         public List<FriendModel> GetFriendsList()
         {
             List<FriendModel> FriendModel;
@@ -59,13 +76,17 @@ namespace UserProfileApp.Service
             return FriendModel;
         }
 
+        /// <summary>
+        ///     delete friend record.
+        /// </summary>
+        /// <param name="FriendId">friend Id</param>
+        /// <returns></returns>
         public bool DeleteFriend(int FriendId)
         {
             var DB = new UserDBEntities();
             var FriendModel = DB.Friends.Where(av => av.Id == FriendId).FirstOrDefault();
             FriendModel.IsActive = false;
-            DB.SaveChanges();
-            return  true;
+            return  DB.SaveChanges() > 0 ? true:false;
         }
     }
 }

@@ -9,6 +9,11 @@ namespace UserProfileApp.Service
 {
     public class UserService
     {
+        /// <summary>
+        ///     Get user by userId
+        /// </summary>
+        /// <param name="UserId">user id</param>
+        /// <returns>user profile model</returns>
         public UserProfile GetUserById(int UserId)
         {
             UserProfile userModel;
@@ -19,6 +24,10 @@ namespace UserProfileApp.Service
             return userModel;
         }
 
+        /// <summary>
+        ///     Resave user profile record.
+        /// </summary>
+        /// <param name="users">user registration data.</param>
         public void ReSaveUser(RegistrationModel users)
         {
             UserProfile userModel;
@@ -30,9 +39,12 @@ namespace UserProfileApp.Service
                 userModel.UserName = users.UserName;
             
              DB.SaveChanges();
-             
         }
 
+        /// <summary>
+        ///     Get user list.
+        /// </summary>
+        /// <returns>user registration model list</returns>
         public List<RegistrationModel> GetUsersList()
         {
             List<RegistrationModel> userModel;

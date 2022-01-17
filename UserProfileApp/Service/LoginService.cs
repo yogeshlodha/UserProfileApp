@@ -9,6 +9,11 @@ namespace UserProfileApp.Service
 {
     public class LoginService
     {
+        /// <summary>
+        ///     Check user credential is valid.
+        /// </summary>
+        /// <param name="model">login model</param>
+        /// <returns></returns>
         public bool checkLogin(LoginModel model)
         {
             UserLogin userModel;
